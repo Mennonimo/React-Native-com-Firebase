@@ -2,7 +2,7 @@
 
 ## Análise de código e refatoração
 
-### - context.js
+- ### context.js
 Em context algumas funções demonstram uma certa problemática de operações com looping
 
 ### - ChatList.js
