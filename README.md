@@ -80,4 +80,4 @@ Em context/
 
 `authContext.js` Criado em sala. Ser o `context.js` apresentado no team
 
-Isso segue a mesma coisa para o `ChatList.js` a qual provavelmente seria o `ChatItem.js` embora necessitei de criar o ChatList pois não possuia inicialmente nos components.
+Isso segue a mesma coisa para o `ChatList.js` a qual provavelmente seria o `ChatItem.js` embora necessitei de criar o ChatList pois não possuia inicialmente arquivo com esse nome nos components.
