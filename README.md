@@ -48,7 +48,8 @@ function HeaderRight() {
 
 - ### CustomMenuItems.js
 Nesse CustomMenuItems um grande problema encontrado foi a mistura do style junto de Tailwind onde há o uso misturado de ambos porém com um style isolado tentando sobrepor o tailwind.
-No campo `<Text style={{ fontSize: hp(1.7) }} className="font-semibold text-neutral-600">`.
+No campo
+`<Text style={{ fontSize: hp(1.7) }} className="font-semibold text-neutral-600">`.
 
 Tailwind/NativeWind aplica estilos com otimizações internas. Quando você usa style={{}}, você sai desse sistema e com isso pode surgir problemas como:
 - Perder cache e otimizações do Tailwind/NativeWind a qual o próprio faz.
@@ -56,3 +57,16 @@ Tailwind/NativeWind aplica estilos com otimizações internas. Quando você usa 
 
 Um dos principais motivos também é o conflito de styles entre o style={{}} e usando o tailwind. O tailwind pode acabar tendo suas próprias confgurações as quais podem ser adaptadas melhor usando ele do que configurando diretamente nele.
 Casos assim são salvos em situações onde é realmente necessária a customização por conta própria e de maneira separada pelo style.
+
+Para ficar mais legivel em relação ao tailwind e poder ser reutilizado esse mesmo estilo em outras telas oque pode ser feito é separar o style e ao invés de colocar o estilo diretamente na View, Component, o correto é colocar em um styleSheet e depois aplicar toda vez que necessário.
+Como nesse exemplo:
+```
+const styles = StyleSheet.create({
+  text: {
+    fontSize: hp(1.7),
+  },
+});
+```
+
+Assim chamando dessa forma no código:
+`<Text style={styles.text} className="font-semibold text-neutral-600">`
