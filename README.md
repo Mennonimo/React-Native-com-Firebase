@@ -73,3 +73,11 @@ const styles = StyleSheet.create({
 Assim chamando dessa forma no código:
 
 `<Text style={styles.text} className="font-semibold text-neutral-600">`
+
+## Observações
+Grande parte das coisas apontadas no código foram analisadas segundo o atual conhecimento que tenho e com um pouco de análise critica de outros códigos e de alguns exemplos já demonstrados antes. Nesses casos aponto que a questão de alguns componentes vazios no código se dão ao fato de eu acreditar estar com os nomes trocados dos códigos postados no teams para os arquivos criados em sala como por exemplo:
+Em context/
+
+`authContext.js` Criado em sala. Ser o `context.js` apresentado no team
+
+Isso segue a mesma coisa para o `ChatList.js` a qual provavelmente seria o `ChatItem.js` embora necessitei de criar o ChatList pois não possuia inicialmente nos components.
