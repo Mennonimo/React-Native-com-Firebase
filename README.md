@@ -8,6 +8,7 @@ Necessariamente não possuis funções necessárias para refatorar diretamente, 
 
 - ### ChatList.js
 No ChatList isso tem um probleminha com relação a definição da key no keyExtractor onde a definição dela está ocorrendo por math.random() onde nào é necessariamente a opção mais viável, podendo ser algo mais bem solido pra chave e não um número aleatório
+
 `keyExtractor={item => item.id.toString()}`
 
 Outra observação é no `noBorder` onde a função dentro está como: `index + 1 == users.length` porém o mais correto ou melhor implementado seria:
@@ -49,6 +50,7 @@ function HeaderRight() {
 - ### CustomMenuItems.js
 Nesse CustomMenuItems um grande problema encontrado foi a mistura do style junto de Tailwind onde há o uso misturado de ambos porém com um style isolado tentando sobrepor o tailwind.
 No campo
+
 `<Text style={{ fontSize: hp(1.7) }} className="font-semibold text-neutral-600">`.
 
 Tailwind/NativeWind aplica estilos com otimizações internas. Quando você usa style={{}}, você sai desse sistema e com isso pode surgir problemas como:
@@ -69,4 +71,5 @@ const styles = StyleSheet.create({
 ```
 
 Assim chamando dessa forma no código:
+
 `<Text style={styles.text} className="font-semibold text-neutral-600">`
