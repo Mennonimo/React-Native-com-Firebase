@@ -13,7 +13,7 @@ No ChatList isso tem um probleminha com relação a definição da key no keyExt
 Outra observação é no `noBorder` onde a função dentro está como: `index + 1 == users.length` porém o mais correto ou melhor implementado seria:
 `noBorder={index == isers.lenght - 1}`
 
-- ### ChatRoomHeader
+- ### ChatRoomHeader.js
 Nesse código algo que poderia ser feito para ficar mais legível e mais usável para situações futuras seria a separação do headerLeft e o headerRight para funções fora do ChatRoomHeader onde podem futuramente talvez serem usadas em outras partes do código e serem mais fáceis de ler.
 ```
 function HeaderLeft({ user, router }) {
@@ -47,4 +47,12 @@ function HeaderRight() {
 
 
 - ### CustomMenuItems.js
-Nesse CustomMenuItems um grande problema encontrado foi a mistura do style junto de Tailwind
+Nesse CustomMenuItems um grande problema encontrado foi a mistura do style junto de Tailwind onde há o uso misturado de ambos porém com um style isolado tentando sobrepor o tailwind.
+No campo `<Text style={{ fontSize: hp(1.7) }} className="font-semibold text-neutral-600">`.
+
+Tailwind/NativeWind aplica estilos com otimizações internas. Quando você usa style={{}}, você sai desse sistema e com isso pode surgir problemas como:
+- Perder cache e otimizações do Tailwind/NativeWind a qual o próprio faz.
+- Podea acabar gerando um layout inconsistente em diferentes dispositivos.
+
+Um dos principais motivos também é o conflito de styles entre o style={{}} e usando o tailwind. O tailwind pode acabar tendo suas próprias confgurações as quais podem ser adaptadas melhor usando ele do que configurando diretamente nele.
+Casos assim são salvos em situações onde é realmente necessária a customização por conta própria e de maneira separada pelo style.
